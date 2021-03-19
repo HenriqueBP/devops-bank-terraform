@@ -2,7 +2,7 @@ Projeto devops-bank-terraform
 
 Arquitetura da infraestrutura projeto:
 
-![image](https://user-images.githubusercontent.com/67326160/111818625-26242980-88be-11eb-91ac-8befedef739e.png)
+![image](https://user-images.githubusercontent.com/67326160/111828981-da2bb180-88ca-11eb-8c4c-c89f86c40111.png)
 
 
 As Ferramentas utilizadas foram:
