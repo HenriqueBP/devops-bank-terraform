@@ -7,8 +7,8 @@ Arquitetura da infraestrutura projeto:
 
 As Ferramentas utilizadas foram:
 
-AWS
-Terraform
+AWS,
+Terraform,
 Github
 
 
