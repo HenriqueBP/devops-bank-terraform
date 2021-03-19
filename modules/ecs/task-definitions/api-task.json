@@ -1,0 +1,34 @@
+[
+  {
+    "name": "${container_name}",
+    "image": "${image}",
+    "portMappings": [
+      {
+        "containerPort": 3000,
+        "hostPort": 3000
+      }
+    ],
+    "cpu": ${desired_task_cpu},
+    "memory": ${desired_task_memory},
+    "networkMode": "awsvpc",
+    "essential": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "node-app",
+        "awslogs-region": "us-east-2",
+        "awslogs-stream-prefix": "node-app"
+      }
+    },
+    "environment": [
+      {
+        "name": "FOO",
+        "value": "BAR"
+      },
+      {
+        "name" : "PORT",
+        "value": "${container_port}"
+      }
+    ]
+  }
+]

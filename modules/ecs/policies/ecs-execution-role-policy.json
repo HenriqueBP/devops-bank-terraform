@@ -1,0 +1,50 @@
+{
+"Version": "2012-10-17",
+"Statement": [
+    {
+        "Effect": "Allow",
+        "Action": [
+            "imagebuilder:GetComponent",
+            "imagebuilder:GetContainerRecipe",
+            "*",
+            "ecs:*"
+
+           
+
+        ],
+        "Resource": "*"
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
+            "kms:Decrypt",
+            "secretsmanager:GetSecretValue"
+        ],
+        "Resource": "*",
+        "Condition": {
+            "ForAnyValue:StringEquals": {
+                "kms:EncryptionContextKeys": "aws:imagebuilder:arn",
+                "aws:CalledVia": [
+                    "imagebuilder.amazonaws.com"
+                ]
+            }
+        }
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
+            "s3:GetObject"
+        ],
+        "Resource": "arn:aws:s3:::ec2imagebuilder*"
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
+            "logs:*"
+            
+            
+        ],
+        "Resource": "*"
+    }
+]
+}
